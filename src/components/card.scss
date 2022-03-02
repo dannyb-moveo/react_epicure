@@ -1,0 +1,26 @@
+.card {
+  flex: 1;
+  max-width: 360px;
+  //   background: beige;
+  background: #f9f4ea;
+  text-align: center;
+
+  img {
+    width: 100%;
+  }
+
+  .card-text {
+    padding: 1rem 0;
+    h3 {
+      margin-top: 1.5rem;
+      font-size: 40px;
+      letter-spacing: 2.67px;
+    }
+
+    p {
+      font-size: 25px;
+      font-weight: 100;
+      letter-spacing: 1.67px;
+    }
+  }
+}
