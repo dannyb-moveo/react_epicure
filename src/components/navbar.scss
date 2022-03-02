@@ -1,60 +1,58 @@
-nav {
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  .right {
+.navbar {
+    height: 4rem;
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 1rem;
-  }
-  .left {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-  }
+    justify-content: space-between;
 
-  .nav-header {
-    display: flex;
-    .img {
-      width: 33px;
-      height: 33px;
+    .navbar_container {
+        display: grid;
+        grid-template-columns: auto auto 1fr auto;
+        align-items: center;
+        gap: 2rem;
+
+        form {
+            justify-items: end;
+        }
+
+        .navbar_header {
+            display: flex;
+            .img {
+                width: 33px;
+                height: 33px;
+            }
+
+            h1 {
+                font-size: 27px;
+                font-weight: 100;
+                letter-spacing: 1.35px;
+                margin-left: 1rem;
+            }
+        }
+
+        .navbar_links {
+            display: flex;
+            gap: 0.8rem;
+
+            li {
+                font-size: 18px;
+                font-weight: 100;
+                letter-spacing: 1.92px;
+            }
+        }
+
+        .navbar_btn-container {
+            display: flex;
+            gap: 1rem;
+            button {
+                background: transparent;
+                border: transparent;
+                cursor: pointer;
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
     }
-
-    h1 {
-      font-size: 27px;
-      font-weight: 100;
-      letter-spacing: 1.35px;
-      margin-left: 1rem;
-    }
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 0.8rem;
-
-    li {
-      font-size: 18px;
-      font-weight: 100;
-      letter-spacing: 1.92px;
-    }
-  }
-
-  .nav-btn-container {
-    display: flex;
-    gap: 1rem;
-    button {
-      background: transparent;
-      border: transparent;
-      cursor: pointer;
-
-      img {
-        width: 24px;
-        height: 24px;
-      }
-    }
-  }
 }
