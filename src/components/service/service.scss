@@ -1,0 +1,21 @@
+@import "../../variables";
+
+.service {
+    text-align: center;
+    background: $gray-color;
+
+    .service_tags {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(auto, 200px));
+        justify-content: center;
+        align-items: center;
+
+        p {
+            margin-top: 1rem;
+
+            font-size: clamp(14px, 2.5vw, 25.2px);
+            font-weight: 100;
+            letter-spacing: 1.94px;
+        }
+    }
+}

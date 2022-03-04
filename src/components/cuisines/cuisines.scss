@@ -1,0 +1,53 @@
+.cuisines {
+    .cuisines_card-wrap {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(200px, 360px));
+        gap: 0.5rem;
+        row-gap: 2rem;
+        justify-content: center;
+
+        overflow-x: scroll;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .restaurants_cards {
+        margin-bottom: 7rem;
+        h3 {
+            font-size: clamp(25px, 2.5vw, 40px);
+        }
+        p {
+            font-size: clamp(20px, 2.5vw, 25px);
+        }
+    }
+
+    .dish_cards {
+        h3 {
+            font-size: clamp(27.6px, 2.5vw, 38.4px);
+        }
+        p {
+            font-size: clamp(17.3px, 2.5vw, 28.8px);
+        }
+    }
+
+    button {
+        display: inline-block;
+        grid-column-start: 3;
+        justify-self: end;
+        font-size: clamp(14px, 2.5vw, 30px);
+        letter-spacing: 2px;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 992px) {
+        .cuisines_card-wrap {
+            justify-content: start;
+
+            button {
+                display: none;
+            }
+        }
+    }
+}
