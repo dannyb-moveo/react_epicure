@@ -10,8 +10,14 @@
         align-items: center;
         gap: 2rem;
 
+        .navbar-sidemenu {
+            display: none;
+        }
+
         form {
-            justify-items: end;
+            justify-self: end;
+            max-width: 350px;
+            width: 80%;
         }
 
         .navbar_header {
@@ -52,6 +58,42 @@
                     width: 24px;
                     height: 24px;
                 }
+            }
+
+            & > :first-child {
+                display: none;
+            }
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .navbar_container {
+            grid-template-columns: repeat(3, 1fr);
+
+            .navbar-sidemenu {
+                display: block;
+            }
+
+            .navbar_header {
+                justify-self: center;
+                h1 {
+                    display: none;
+                }
+            }
+
+            .navbar_links {
+                display: none;
+            }
+
+            .navbar_btn-container {
+                justify-self: end;
+                & > :first-child {
+                    display: inline-block;
+                }
+            }
+
+            form {
+                display: none;
             }
         }
     }
