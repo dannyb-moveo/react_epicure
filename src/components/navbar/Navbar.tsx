@@ -57,6 +57,36 @@ const Header = () => {
           </div>
         </div>
       </div>
+
+      <div className="navbar__container2">
+        <div className="navbar__left">
+          <button
+            type="button"
+            className="btn"
+            onClick={() => handleSidebar(true)}
+          >
+            <img src={hamburgerIcon} alt="menu" />
+          </button>
+
+          <div className="navbar__logo">
+            <img src={logo} alt="epicure" />
+          </div>
+        </div>
+
+        <div className="navbar__right">
+          <div className="navbar__btn-container">
+            <button type="button" className="btn">
+              <img src={searchIcon} alt="userIcon" />
+            </button>
+            <button type="button" className="btn">
+              <img src={userIcon} alt="userIcon" />
+            </button>
+            <button type="button" className="btn">
+              <img src={bagIcon} alt="bagIcon" />
+            </button>
+          </div>
+        </div>
+      </div>
     </nav>
   );
 };

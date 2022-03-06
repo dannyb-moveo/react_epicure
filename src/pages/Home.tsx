@@ -13,14 +13,14 @@ import "./home.scss";
 const Home = () => {
   return (
     <>
-      <Sidebar />
+      {/* <Sidebar /> */}
       <Navbar />
-      <Hero />
+      {/* <Hero />
       <Cuisines />
       <Service />
       <COTW />
       <About />
-      <Footer />
+      <Footer /> */}
     </>
   );
 };
