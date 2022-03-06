@@ -7,13 +7,23 @@ import bagIcon from "../../assets/bag-icon.svg";
 import userIcon from "../../assets/user-icon.svg";
 import searchIcon from "../../assets/search-icon.svg";
 import hamburgerIcon from "../../assets/hamburger-menu.svg";
+import { useState } from "react";
 
 const Header = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const handleSidebar = (action: boolean) => {
+    console.log(action);
+    setIsSidebarOpen(action);
+  };
   return (
     <nav className="navbar">
       <div className="navbar_container">
         <div className="navbar-sidemenu">
-          <button type="button" className="btn">
+          <button
+            type="button"
+            className="btn"
+            onClick={() => handleSidebar(true)}
+          >
             <img src={hamburgerIcon} alt="menu" />
           </button>
         </div>

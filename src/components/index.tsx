@@ -9,16 +9,18 @@ import Service from "./service/Service";
 import COTW from "./COTW/COTW";
 import About from "./about/About";
 import Footer from "./footer/Footer";
+import Sidebar from "./sidebar/Sidebar";
 
 export {
-    Navbar,
-    Searchbar,
-    Card,
-    Hero,
-    Title,
-    Cuisines,
-    Service,
-    COTW,
-    About,
-    Footer
+  Navbar,
+  Searchbar,
+  Card,
+  Hero,
+  Title,
+  Cuisines,
+  Service,
+  COTW,
+  About,
+  Footer,
+  Sidebar,
 };
