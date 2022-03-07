@@ -10,8 +10,7 @@
   .hero_search-container {
     max-width: 781px;
     width: 90vw;
-    height: 222px;
-    height: clamp(125px, 2.5vw, 222px);
+    height: clamp(125px, 25vw, 222px);
     background: rgba(255, 255, 255, 0.88);
     margin: 0 auto;
 

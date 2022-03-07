@@ -42,12 +42,10 @@ const Card = ({
               )}
 
               <div className="card_content-price">
-                <div className="line"></div>
                 <p>
                   <span>&#8362;</span>
                   {price}
                 </p>
-                <div className="line"></div>
               </div>
             </div>
           )}

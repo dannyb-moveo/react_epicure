@@ -1,5 +1,6 @@
 import "./cuisines.scss";
 import { Title, Card } from "..";
+import Slider from "react-slick";
 
 // popular restaurants images
 import claro from "../../assets/claro.jpg";
@@ -15,6 +16,9 @@ import smokedPizza from "../../assets/rectangle3.png";
 import spicyIcon from "../../assets/spicy-icon.svg";
 import vegIcon from "../../assets/vegetarian.svg";
 import veganIcon from "../../assets/vegan-icon.svg";
+
+//slides settings
+import { settings } from "./slidesSettings";
 
 const Cuisines = () => {
   return (
@@ -34,6 +38,18 @@ const Cuisines = () => {
             All Restaurants {">>"}
           </button>
         </div>
+
+        {/* <Slider {...settings} className="favorite__slides-restaurant">
+          <Card img={claro} title={"Claro"} description={"Ran Shmueli"} />
+
+          <Card img={lumina} title={"Lumina"} description={"Meir Adoni"} />
+
+          <Card
+            img={tigerLilly}
+            title={"Tiger Lilly"}
+            description={"Yanir Green"}
+          />
+        </Slider> */}
 
         <Title title="SIGNATURE DISH OF :" align="center" />
 

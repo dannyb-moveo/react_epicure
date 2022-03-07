@@ -10,15 +10,20 @@
   &_img {
     object-fit: contain;
     img {
+      height: 100%;
       width: 100%;
     }
   }
 
   &_content {
-    padding: 0 35px;
+    padding: 0 clamp(20px, 2.5vw, 35px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    & > * {
+      flex: 1;
+    }
 
     &-text {
       h3 {
@@ -30,14 +35,14 @@
         font-weight: 100;
         line-height: 1.2;
         letter-spacing: 1.6px;
+        margin-bottom: 1.5rem;
       }
     }
 
     &-dish {
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
       .card_icon {
         width: 30px;
         height: 30px;
@@ -52,23 +57,28 @@
     }
 
     &-price {
-      display: grid;
-      grid-template-columns: auto auto auto;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-
-      .line {
-        width: clamp(55px, 9vw, 100px);
-        height: 1px;
-        background: $card-line-bg-color;
-      }
       p {
-        margin: 0;
+        margin-bottom: 0.5rem;
+        &::after,
+        &::before {
+          content: "";
+          display: inline-block;
+          height: 0.5px;
+          background: $--color-brown-gray;
 
-        span {
-          font-size: clamp(14.3px, 2.5vw, 20px);
+          position: relative;
+          vertical-align: middle;
+          width: clamp(55px, 9vw, 100px);
+        }
+
+        &::before {
+          right: 0.5em;
+          margin-left: -50%;
+        }
+
+        &:after {
+          left: 0.5em;
+          margin-right: -50%;
         }
       }
     }
