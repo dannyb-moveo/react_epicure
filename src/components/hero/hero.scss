@@ -1,5 +1,7 @@
+@import "../../variables";
+
 .hero {
-  height: calc(100vh - 4rem);
+  height: calc(50vh - 4rem);
   background: url("../../assets/hero-picture.png") no-repeat center center/cover;
   display: flex;
   justify-content: center;
@@ -9,6 +11,7 @@
     max-width: 781px;
     width: 90vw;
     height: 222px;
+    height: clamp(125px, 2.5vw, 222px);
     background: rgba(255, 255, 255, 0.88);
     margin: 0 auto;
 
@@ -29,15 +32,42 @@
 
     form {
       max-width: 511px;
-      width: 90%;
+      width: clamp(80%, 2.5vw, 90%);
 
-      .searchbar_input {
-        height: 48px;
+      .searchbar {
+        &_input {
+          height: clamp(33px, 2.5vw, 48px);
+        }
       }
     }
   }
+}
 
-  @media screen and (max-width: 992px) {
-    height: calc(50vh - 4rem);
+.hero__nav {
+  height: 125px;
+  opacity: 0.9;
+  background: $gray-color;
+
+  .hero__nav-container {
+    height: 100%;
+    display: flex;
+    gap: 17px;
+    justify-content: center;
+    align-items: center;
+
+    & > button {
+      font-size: 13px;
+      padding: 0.75rem 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .hero {
+    height: calc(100vh - 4rem);
+  }
+
+  .hero__nav {
+    display: none;
   }
 }

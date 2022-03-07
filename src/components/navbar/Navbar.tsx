@@ -58,7 +58,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="navbar__container2">
+      <div className="navbar__container2 container">
         <div className="navbar__left">
           <button
             type="button"
