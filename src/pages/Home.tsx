@@ -17,9 +17,9 @@ const Home = () => {
       <Navbar />
       <Hero />
       <Cuisines />
-      {/* 
       <Service />
       <COTW />
+      {/* 
       <About />
       <Footer /> */}
     </>

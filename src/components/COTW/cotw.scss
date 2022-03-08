@@ -1,16 +1,18 @@
 .COTW {
   .COTW_container {
-    padding: 0 5rem;
+    padding: 0;
 
     .title {
-      margin-bottom: 37px;
+      margin-bottom: 1rem;
     }
   }
   .COTW_info {
     display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 5rem;
     margin-bottom: 1rem;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    place-items: center;
+    gap: 2rem;
 
     .COTW_img {
       max-width: 430px;
@@ -45,7 +47,7 @@
       font-weight: 100;
       line-height: 1.2;
       letter-spacing: 1.08px;
-      text-align: justify;
+      text-align: center;
     }
   }
 
@@ -60,7 +62,7 @@
   .COTW_restaurants {
     display: grid;
     grid-template-columns: repeat(3, minmax(154px, 231px));
-    gap: 1rem;
+    gap: 10px;
 
     overflow-x: scroll;
 
@@ -68,8 +70,9 @@
       display: none;
     }
 
-    //card title
+    //card
     .card_content {
+      padding-bottom: 2rem;
       h3 {
         font-size: clamp(20px, 2.5vw, 30px);
         letter-spacing: 2px;
@@ -77,15 +80,21 @@
     }
   }
 
-  @media screen and (max-width: 992px) {
+  @media screen and (min-width: 992px) {
     .COTW_info {
-      grid-template-columns: 1fr;
-      justify-content: center;
-      place-items: center;
-      gap: 2rem;
+      grid-template-columns: repeat(2, auto);
+      gap: 5rem;
 
       p {
-        text-align: center;
+        text-align: justify;
+      }
+    }
+
+    .COTW_container {
+      padding: 0 5rem;
+
+      .title {
+        margin-bottom: 37px;
       }
     }
   }
