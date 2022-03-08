@@ -20,8 +20,7 @@ const Home = () => {
       <Service />
       <COTW />
       <About />
-      {/* 
-      <Footer /> */}
+      <Footer />
     </>
   );
 };

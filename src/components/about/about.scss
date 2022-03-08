@@ -71,9 +71,8 @@
   }
 
   @media screen and (min-width: 992px) {
-    grid-template-columns: 1fr 0.8fr;
-
     .about_container {
+      grid-template-columns: 1fr 0.8fr;
       padding: 0 5rem;
 
       .about_logo {

@@ -1,117 +1,3 @@
-// .navbar {
-//   height: 4rem;
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-
-//   .navbar_container {
-//     display: grid;
-//     width: 100%;
-//     padding: 0 123px;
-//     grid-template-columns: 1fr 1fr;
-//     align-items: center;
-//     gap: 2rem;
-
-//     .navbar_left {
-//       justify-self: start;
-//     }
-
-//     .navbar_right {
-//       justify-self: end;
-//       display: grid;
-//       grid-template-columns: minmax(auto, 350px) max-content;
-//       column-gap: 28px;
-
-//       form {
-//         max-width: 350px;
-//         width: 100%;
-//       }
-
-//       .navbar_btn-container {
-//         display: flex;
-//         gap: 28px;
-//         button {
-//           background: transparent;
-//           border: transparent;
-//           cursor: pointer;
-
-//           img {
-//             width: 24px;
-//             height: 24px;
-//           }
-//         }
-
-//         & > :first-child {
-//           display: none;
-//         }
-//       }
-//     }
-
-//     .navbar-sidemenu {
-//       display: none;
-//     }
-
-//     .navbar_links {
-//       display: flex;
-//       align-items: center;
-
-//       .img {
-//         width: 33px;
-//         height: 33px;
-//       }
-//       h1 {
-//         font-size: 27px;
-//         font-weight: 100;
-//         letter-spacing: 1.35px;
-//         margin-left: 1rem;
-//       }
-
-//       ul {
-//         margin-left: 31px;
-//         display: flex;
-//         gap: 28px;
-//         li {
-//           font-size: 18px;
-//           font-weight: 100;
-//           letter-spacing: 1.92px;
-//         }
-//       }
-//     }
-//   }
-
-// @media screen and (max-width: 992px) {
-//   .navbar_container {
-//     grid-template-columns: repeat(3, 1fr);
-
-//     .navbar-sidemenu {
-//       display: block;
-//     }
-
-//     .navbar_header {
-//       justify-self: center;
-//       h1 {
-//         display: none;
-//       }
-//     }
-
-//     .navbar_links {
-//       display: none;
-//     }
-
-//     .navbar_btn-container {
-//       justify-self: end;
-//       & > :first-child {
-//         display: inline-block;
-//       }
-//     }
-
-//     form {
-//       display: none;
-//     }
-//   }
-// }
-// }
-
 .navbar {
   max-height: 45px;
   height: 4rem;
@@ -122,7 +8,6 @@
 
   &__container2 {
     height: 100%;
-    // padding: 0 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     position: relative;
@@ -162,6 +47,7 @@
   }
 
   @media screen and (min-width: 992px) {
+    max-height: 62px;
     &__container2 {
       display: none;
     }

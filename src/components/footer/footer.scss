@@ -1,19 +1,29 @@
 .footer {
-    height: 4rem;
+  min-height: 126px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 23px 0;
+
+  .footer_links {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 18px;
 
-    .footer_links {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-
-        li {
-            font-size: 18px;
-            font-weight: 100;
-            letter-spacing: 1.13px;
-        }
+    li {
+      font-size: clamp(12px, 2.5vw, 18px);
+      font-weight: 100;
+      letter-spacing: 1.13px;
     }
+  }
+
+  @media screen and (min-width: 600px) {
+    min-height: 6rem;
+    .footer_links {
+      flex-direction: row;
+      gap: 46px;
+    }
+  }
 }
