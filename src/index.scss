@@ -1,0 +1,158 @@
+@import "./variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: $--color-black;
+
+  &:visited {
+    color: $--color-black;
+  }
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.container {
+  width: 90vw;
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+.padding-y {
+  padding: 5rem 0;
+}
+
+.btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: $--color-primary;
+  color: $--color-black;
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: translate(-100px, 0);
+  z-index: 1;
+
+  &.fade-enter-active {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: opacity 250ms ease-in, transform 300ms ease;
+  }
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translate(0, 0);
+  &.fade-exit-active {
+    opacity: 0;
+    transform: translate(-120px, 0);
+
+    transition: opacity 250ms ease-in, transform 300ms ease;
+  }
+}
+
+.page {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+}
+
+.page-enter {
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.slide-enter,
+.slide-exit {
+  transition: transform 1000ms ease-out;
+}
+
+.slide-enter {
+  transform: translateX(100%);
+}
+
+.slide-enter.slide-enter-active {
+  transform: translateX(0%);
+}
+
+.slide-exit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translateX(0%);
+}
+
+.slide-exit-active {
+  transform: translateX(-100%);
+}
+
+.card_slider {
+  .slick-list {
+    margin-left: -13px;
+  }
+  .slick-track {
+    display: flex !important;
+    justify-content: center;
+    gap: 13px;
+  }
+
+  .slick-slide {
+    max-width: 360px;
+    box-sizing: border-box;
+    height: auto !important;
+    width: 100%;
+    height: 100%;
+    & > * {
+      height: 100%;
+
+      & > .card {
+        height: 100%;
+      }
+    }
+  }
+}

@@ -43,41 +43,21 @@
     }
 
     p {
-      font-size: clamp(13.5px, 2.5vw, 25px);
+      font-size: clamp(13.5px, 2vw, 25px);
       font-weight: 100;
       line-height: 1.2;
       letter-spacing: 1.08px;
       text-align: center;
+      margin-bottom: unset;
     }
   }
 
-  .COTW_reataurants-title {
+  .COTW_restaurants-title {
     font-size: clamp(14px, 2.5vw, 30px);
     font-weight: 100;
     line-height: 1;
     letter-spacing: 2px;
     margin: 3.5rem 0 1.5rem 0;
-  }
-
-  .COTW_restaurants {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(154px, 231px));
-    gap: 10px;
-
-    overflow-x: scroll;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    //card
-    .card_content {
-      padding-bottom: 2rem;
-      h3 {
-        font-size: clamp(20px, 2.5vw, 30px);
-        letter-spacing: 2px;
-      }
-    }
   }
 
   @media screen and (min-width: 992px) {
@@ -97,5 +77,23 @@
         margin-bottom: 37px;
       }
     }
+  }
+}
+
+/* ----- Slider ----- */
+.COTW_restaurants-slider {
+  .card_content {
+    padding-bottom: 2rem;
+    h3 {
+      font-size: clamp(20px, 2.5vw, 30px);
+      letter-spacing: 2px;
+    }
+  }
+
+  .slick-track {
+    justify-content: start;
+  }
+  .slick-slide {
+    max-width: 231px;
   }
 }

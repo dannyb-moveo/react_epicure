@@ -1,7 +1,8 @@
 import "./card.scss";
-import food1 from "../../assets/claro.jpg";
+import food1 from "../../../assets/claro.jpg";
 
 type CardProps = {
+  cardTitle?: string;
   isDish?: boolean;
   isCOFW?: boolean;
   price?: number;
@@ -12,6 +13,7 @@ type CardProps = {
 };
 
 const Card = ({
+  cardTitle,
   isDish,
   isCOFW,
   img,
@@ -21,7 +23,8 @@ const Card = ({
   icon,
 }: CardProps) => {
   return (
-    <>
+    <article>
+      {cardTitle && <h3 className="card_title">{cardTitle}</h3>}
       <div className="card">
         <div className="card_img">
           <img src={img || food1} alt="fav1" />
@@ -51,7 +54,7 @@ const Card = ({
           )}
         </div>
       </div>
-    </>
+    </article>
   );
 };
 

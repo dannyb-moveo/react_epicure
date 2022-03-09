@@ -1,5 +1,6 @@
-import React from "react";
-import { Card, Title } from "..";
+import Slider from "react-slick";
+import { settings } from "./cotwSliderSettings";
+import { Title, Card } from "../UI";
 import "./cotw.scss";
 import chefImg from "../../assets/untitled-1.jpg";
 
@@ -29,12 +30,12 @@ const COTW = () => {
             experience are expressed in the every detail of each and every dish.
           </p>
         </div>
-        <h2 className="COTW_reataurants-title">Yossi’s restaurants :</h2>
-        <div className="COTW_restaurants">
+        <h2 className="COTW_restaurants-title">Yossi’s restaurants :</h2>
+        <Slider {...settings} className="card_slider COTW_restaurants-slider">
           <Card isCOFW={true} title={"Onza"} img={onza} />
           <Card isCOFW={true} title={"Kitchen Market"} img={kitchenMarket} />
           <Card isCOFW={true} title={"Mashya"} img={mashya} />
-        </div>
+        </Slider>
       </div>
     </section>
   );

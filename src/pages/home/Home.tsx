@@ -1,27 +1,23 @@
 import {
-  Navbar,
   Hero,
-  Cuisines,
+  Favorites,
   Service,
   COTW,
   About,
   Footer,
-  Sidebar,
-} from "../components";
+} from "../../components";
 import "./home.scss";
 
 const Home = () => {
   return (
-    <>
-      {/* <Sidebar /> */}
-      <Navbar />
+    <main>
       <Hero />
-      <Cuisines />
+      <Favorites />
       <Service />
       <COTW />
       <About />
       <Footer />
-    </>
+    </main>
   );
 };
 

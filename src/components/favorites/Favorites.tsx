@@ -1,13 +1,13 @@
-import "./cuisines.scss";
-import { Title, Card } from "..";
+import "./favorites.scss";
+import { Title, Card } from "../UI";
 import Slider from "react-slick";
 
-// popular restaurants images
+// favorite restaurants images
 import claro from "../../assets/claro.jpg";
 import lumina from "../../assets/mizlala-gret-mullet-fillet.jpg";
 import tigerLilly from "../../assets/tiger-lili.jpg";
 
-// signature dishes images
+// favorite dishes images
 import padKi from "../../assets/rectangle.png";
 import garbanzo from "../../assets/rectangle2.png";
 import smokedPizza from "../../assets/rectangle3.png";
@@ -18,28 +18,18 @@ import vegIcon from "../../assets/vegetarian.svg";
 import veganIcon from "../../assets/vegan-icon.svg";
 
 //slides settings
-import { settings } from "./slidesSettings";
+import { settings, dishSettings } from "./slidesSettings";
 
-const Cuisines = () => {
+const Favorites = () => {
   return (
-    <section className="cuisines padding-y">
+    <section className="favorites padding-y">
       <div className="container">
         <Title title="THE POPULAR RESTAURANTS IN EPICURE :" align="center" />
 
-        <div className="cuisines_card-wrap restaurants_cards">
-          <Card img={claro} title={"Claro"} description={"Ran Shmueli"} />
-          <Card img={lumina} title={"Lumina"} description={"Meir Adoni"} />
-          <Card
-            img={tigerLilly}
-            title={"Tiger Lilly"}
-            description={"Yanir Green"}
-          />
-          <button type="button" className="btn">
-            All Restaurants {">>"}
-          </button>
-        </div>
-
-        {/* <Slider {...settings} className="favorite__slides-restaurant">
+        <Slider
+          {...settings}
+          className="favorite__restaurant-slider card_slider"
+        >
           <Card img={claro} title={"Claro"} description={"Ran Shmueli"} />
 
           <Card img={lumina} title={"Lumina"} description={"Meir Adoni"} />
@@ -49,12 +39,20 @@ const Cuisines = () => {
             title={"Tiger Lilly"}
             description={"Yanir Green"}
           />
-        </Slider> */}
+        </Slider>
 
-        <Title title="SIGNATURE DISH OF :" align="center" />
+        <button type="button" className="btn">
+          All Restaurants {">>"}
+        </button>
 
-        <div className="cuisines_card-wrap dish_cards">
+        <Title
+          title="SIGNATURE DISH OF :"
+          align="center"
+          className="favorite__dish-title"
+        />
+        <Slider {...dishSettings} className="favorite__dish-slider card_slider">
           <Card
+            cardTitle={"Tiger Lilly"}
             isDish={true}
             img={padKi}
             title={"Pad Ki Mao"}
@@ -65,6 +63,7 @@ const Cuisines = () => {
             icon={spicyIcon}
           />
           <Card
+            cardTitle={"Kab Kem"}
             isDish={true}
             img={garbanzo}
             title={"Garbanzo Frito"}
@@ -75,6 +74,7 @@ const Cuisines = () => {
           />
 
           <Card
+            cardTitle={"Popina"}
             isDish={true}
             img={smokedPizza}
             title={"Smoked Pizza"}
@@ -84,10 +84,10 @@ const Cuisines = () => {
             price={65}
             icon={veganIcon}
           />
-        </div>
+        </Slider>
       </div>
     </section>
   );
 };
 
-export default Cuisines;
+export default Favorites;

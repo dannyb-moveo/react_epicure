@@ -1,4 +1,4 @@
-import Title from "../title/Title";
+import { Title } from "../UI";
 import "./service.scss";
 
 import spicyIcon from "../../assets/spicy-icon.svg";
@@ -7,7 +7,7 @@ import veganIcon from "../../assets/vegan-icon.svg";
 
 const Service = () => {
   return (
-    <section className="service padding-y">
+    <section className="service">
       <div className="container">
         <Title title="THE MEANING OF OUR ICONS :" align="center" />
 

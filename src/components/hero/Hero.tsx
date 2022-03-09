@@ -1,4 +1,4 @@
-import { Searchbar } from "..";
+import { Searchbar } from "../UI";
 import "./hero.scss";
 
 const Hero = () => {

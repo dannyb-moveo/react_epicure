@@ -1,5 +1,6 @@
 import { links } from "../../utils/constants";
-import { Searchbar } from "..";
+import { Searchbar } from "../UI";
+import { Link } from "react-router-dom";
 
 import "./navbar.scss";
 import logo from "../../assets/logo.jpg";
@@ -30,12 +31,20 @@ const Header = () => {
 
         <div className="navbar_left">
           <div className="navbar_links">
-            <img src={logo} alt="epicure" />
-            <h1>EPICURE</h1>
+            <Link to="/">
+              <img src={logo} alt="epicure" />
+            </Link>
+            <Link to="/">
+              <h1>EPICURE</h1>
+            </Link>
             <ul>
               {links.map((link) => {
                 const { id, text, url } = link;
-                return <li key={id}>{text}</li>;
+                return (
+                  <li key={id}>
+                    <Link to={url}>{text}</Link>
+                  </li>
+                );
               })}
             </ul>
           </div>
@@ -60,13 +69,10 @@ const Header = () => {
 
       <div className="navbar__container2 container">
         <div className="navbar__left">
-          <button
-            type="button"
-            className="btn"
-            onClick={() => handleSidebar(true)}
-          >
+          {/* hamburger menu */}
+          <Link to="/" className="btn" onClick={() => handleSidebar(true)}>
             <img src={hamburgerIcon} alt="menu" />
-          </button>
+          </Link>
 
           <div className="navbar__logo">
             <img src={logo} alt="epicure" />
