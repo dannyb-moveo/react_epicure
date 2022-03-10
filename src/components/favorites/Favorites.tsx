@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import claro from "../../assets/claro.jpg";
 import lumina from "../../assets/mizlala-gret-mullet-fillet.jpg";
 import tigerLilly from "../../assets/tiger-lili.jpg";
+import arrows from "../../assets/all-restaurants-arrows.svg";
 
 // favorite dishes images
 import padKi from "../../assets/rectangle.png";
@@ -18,7 +19,7 @@ import vegIcon from "../../assets/vegetarian.svg";
 import veganIcon from "../../assets/vegan-icon.svg";
 
 //slides settings
-import { settings, dishSettings } from "./slidesSettings";
+import { restaurantSettings, dishSettings } from "./slidesSettings";
 
 const Favorites = () => {
   return (
@@ -26,24 +27,28 @@ const Favorites = () => {
       <div className="container">
         <Title title="THE POPULAR RESTAURANTS IN EPICURE :" align="center" />
 
-        <Slider
-          {...settings}
-          className="favorite__restaurant-slider card_slider"
-        >
-          <Card img={claro} title={"Claro"} description={"Ran Shmueli"} />
+        <div className="favorite__restaurant-slider-wrapper">
+          <Slider
+            {...restaurantSettings}
+            className="favorite__restaurant-slider card_slider"
+          >
+            <Card img={claro} title={"Claro"} description={"Ran Shmueli"} />
 
-          <Card img={lumina} title={"Lumina"} description={"Meir Adoni"} />
+            <Card img={lumina} title={"Lumina"} description={"Meir Adoni"} />
 
-          <Card
-            img={tigerLilly}
-            title={"Tiger Lilly"}
-            description={"Yanir Green"}
-          />
-        </Slider>
+            <Card
+              img={tigerLilly}
+              title={"Tiger Lilly"}
+              description={"Yanir Green"}
+            />
+          </Slider>
 
-        <button type="button" className="btn">
-          All Restaurants {">>"}
-        </button>
+          <div className="favorite-restaurant-button">
+            <button type="button" className="btn">
+              All Restaurants <img src={arrows} alt="arrows" />
+            </button>
+          </div>
+        </div>
 
         <Title
           title="SIGNATURE DISH OF :"

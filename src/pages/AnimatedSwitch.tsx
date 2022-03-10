@@ -7,7 +7,12 @@ const AnimatedSwitch = () => {
   const location = useLocation();
   return (
     <TransitionGroup component={null}>
-      <CSSTransition key={location.pathname} classNames="fade" timeout={250}>
+      <CSSTransition
+        key={location.pathname}
+        classNames="fade"
+        timeout={{ enter: 600, exit: 600 }}
+        appear
+      >
         <Routes location={location}>
           <Route path="/" element={<Home />} />
           <Route path="/restaurants" element={<Restaurants />} />

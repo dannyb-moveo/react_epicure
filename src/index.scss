@@ -30,7 +30,7 @@ p {
 img {
   width: 100%;
   object-fit: cover;
-  display: block;
+  display: inline-block;
 }
 
 .container {
@@ -48,6 +48,11 @@ img {
   background: none;
   cursor: pointer;
   display: inline-block;
+  transition: all 0.3s linear;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 .btn-primary {
@@ -55,82 +60,32 @@ img {
   color: $--color-black;
 }
 
+/* -----page transition-----*/
+.fade-appear,
 .fade-enter {
-  opacity: 0;
-  transform: translate(-100px, 0);
-  z-index: 1;
-
-  &.fade-enter-active {
-    opacity: 1;
-    transform: translate(0, 0);
-    transition: opacity 250ms ease-in, transform 300ms ease;
-  }
+  opacity: 0.4;
+  // transform: translateY(10px);
+}
+.fade-appear-active,
+.fade-enter-active {
+  transition: all 0.3s ease-in;
+  transform: translateY(0px);
+  opacity: 1;
 }
 
 .fade-exit {
+  transition: all 0.3s ease-out;
+  transform: translateY(0px);
   opacity: 1;
-  transform: translate(0, 0);
-  &.fade-exit-active {
-    opacity: 0;
-    transform: translate(-120px, 0);
-
-    transition: opacity 250ms ease-in, transform 300ms ease;
-  }
 }
 
-.page {
-  position: absolute;
-  left: 15px;
-  right: 15px;
+.fade-exit-active {
+  transition: all 0.3s ease-out;
+  opacity: 0.4;
+  transform: translateY(10px);
 }
 
-.page-enter {
-  opacity: 0;
-  transform: scale(1.1);
-}
-
-.page-enter-active {
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 300ms, transform 300ms;
-}
-
-.page-exit {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.page-exit-active {
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 300ms, transform 300ms;
-}
-
-.slide-enter,
-.slide-exit {
-  transition: transform 1000ms ease-out;
-}
-
-.slide-enter {
-  transform: translateX(100%);
-}
-
-.slide-enter.slide-enter-active {
-  transform: translateX(0%);
-}
-
-.slide-exit {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transform: translateX(0%);
-}
-
-.slide-exit-active {
-  transform: translateX(-100%);
-}
-
+/* -----Slider Options-----*/
 .card_slider {
   .slick-list {
     margin-left: -13px;

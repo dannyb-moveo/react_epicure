@@ -10,6 +10,7 @@ type CardProps = {
   icon?: string;
   title?: string;
   description?: string;
+  btn?: boolean;
 };
 
 const Card = ({
@@ -21,6 +22,7 @@ const Card = ({
   description,
   price,
   icon,
+  btn,
 }: CardProps) => {
   return (
     <article>

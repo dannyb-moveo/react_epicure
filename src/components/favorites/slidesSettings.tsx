@@ -1,8 +1,9 @@
-export const settings: {} = {
+export const restaurantSettings: {} = {
   slidesToShow: 3,
   initialSlide: 0,
   infinite: false,
-  dots: true,
+  dots: false,
+  arrows: false,
   // variableWidth: true,
   responsive: [
     {
@@ -36,8 +37,8 @@ export const dishSettings: {} = {
   slidesToShow: 3,
   initialSlide: 0,
   infinite: false,
-  dots: true,
-  // variableWidth: true,
+  dots: false,
+  arrows: false,
   responsive: [
     {
       breakpoint: 850,
@@ -58,7 +59,7 @@ export const dishSettings: {} = {
     {
       breakpoint: 500,
       settings: {
-        slidesToShow: 1.33,
+        slidesToShow: 1.38,
         initialSlide: 0,
         infinite: false,
       },

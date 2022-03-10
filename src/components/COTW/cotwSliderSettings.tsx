@@ -1,19 +1,19 @@
 export const settings: {} = {
   slidesToShow: 3,
   infinite: false,
-  dots: true,
-
+  dots: false,
+  arrows: false,
   responsive: [
     {
       breakpoint: 850,
       settings: {
-        slidesToShow: 2.5,
+        slidesToShow: 3,
       },
     },
     {
       breakpoint: 650,
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 2.5,
       },
     },
     {

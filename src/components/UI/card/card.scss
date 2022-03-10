@@ -5,6 +5,7 @@ article {
   display: flex;
   flex-direction: column;
   text-align: center;
+  position: relative;
 
   .card_title {
     font-size: clamp(16px, 2.5vw, 30px);
