@@ -25,8 +25,6 @@ const Search = () => {
   }, [searchTerm]);
 
   if (isLoading) {
-    //loader
-    // return <div>loading...</div>;
     return <Loader loading={isLoading} marginTop="5" />;
   }
 

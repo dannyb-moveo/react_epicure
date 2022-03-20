@@ -44,9 +44,6 @@ const COTW = () => {
         </div>
         <h2 className="COTW_restaurants-title">Yossi’s restaurants :</h2>
         <Slider {...settings} className="card_slider COTW_restaurants-slider">
-          {/* <Card isCOFW={true} title={"Onza"} img={onza} />
-          <Card isCOFW={true} title={"Kitchen Market"} img={kitchenMarket} />
-          <Card isCOFW={true} title={"Mashya"} img={mashya} /> */}
           {cotwRestaurants.map((restaurant, index) => {
             const { name, image } = restaurant;
             return <Card key={index} isCOFW title={name} img={image} />;

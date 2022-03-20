@@ -47,12 +47,6 @@ const Favorites = () => {
             {...restaurantSettings}
             className="favorite__restaurant-slider card_slider"
           >
-            {/* <Card
-              img={tigerLilly}
-              title={"Tiger Lilly"}
-              description={"Yanir Green"}
-            />  */}
-
             {restaurants.map((restaurant, index) => {
               const {
                 image,
@@ -83,18 +77,6 @@ const Favorites = () => {
           className="favorite__dish-title"
         />
         <Slider {...dishSettings} className="favorite__dish-slider card_slider">
-          {/* <Card
-            cardTitle={"Popina"}
-            isDish={true}
-            img={smokedPizza}
-            title={"Smoked Pizza"}
-            description={
-              'Basil dough, cashew "butter", demi-glace, bison & radish'
-            }
-            price={65}
-            icon={veganIcon}
-          />  */}
-
           {dishes.map((dish, index) => {
             const {
               name,
@@ -104,9 +86,6 @@ const Favorites = () => {
               tags,
               ingredients,
             }: dishInterface = dish;
-
-            // tags.map((tag) => console.log(tag));
-
             return (
               <Card
                 key={index}

@@ -8,7 +8,7 @@ const Chefs = () => {
     <AnimatedPage>
       <div className="chefs">
         Chefs
-        <Autocomplete />
+        {/* <Autocomplete /> */}
       </div>
     </AnimatedPage>
   );
