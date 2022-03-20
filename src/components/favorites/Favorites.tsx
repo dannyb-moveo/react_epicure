@@ -2,26 +2,41 @@ import "./favorites.scss";
 import { Title, Card } from "../UI";
 import Slider from "react-slick";
 
+//interface
+import dishInterface from "../../interfaces/dish.interface";
+
 // favorite restaurants images
-import claro from "../../assets/claro.jpg";
-import lumina from "../../assets/mizlala-gret-mullet-fillet.jpg";
-import tigerLilly from "../../assets/tiger-lili.jpg";
 import arrows from "../../assets/all-restaurants-arrows.svg";
 
-// favorite dishes images
-import padKi from "../../assets/rectangle.png";
-import garbanzo from "../../assets/rectangle2.png";
-import smokedPizza from "../../assets/rectangle3.png";
-
 // food types icons
-import spicyIcon from "../../assets/spicy-icon.svg";
-import vegIcon from "../../assets/vegetarian.svg";
 import veganIcon from "../../assets/vegan-icon.svg";
 
 //slides settings
 import { restaurantSettings, dishSettings } from "./slidesSettings";
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../../store";
+import { fetchRestaurants } from "../../store/restaurants-slice";
+import { fetchDishes } from "../../store/dishes-slice";
 
 const Favorites = () => {
+  const dispatch = useAppDispatch();
+  const { dishes, isLoading: isDishesLoading } = useAppSelector(
+    (state) => state.dishes
+  );
+  const { restaurants, isLoading: isRestaurantsLoading } = useAppSelector(
+    (state) => state.restaurants
+  );
+
+  useEffect(() => {
+    dispatch(fetchRestaurants());
+    dispatch(fetchDishes());
+  }, []);
+
+  if (isRestaurantsLoading || isDishesLoading) {
+    // implement loader here
+    return <div>hello</div>;
+  }
+
   return (
     <section className="favorites padding-y">
       <div className="container">
@@ -32,15 +47,27 @@ const Favorites = () => {
             {...restaurantSettings}
             className="favorite__restaurant-slider card_slider"
           >
-            <Card img={claro} title={"Claro"} description={"Ran Shmueli"} />
-
-            <Card img={lumina} title={"Lumina"} description={"Meir Adoni"} />
-
-            <Card
+            {/* <Card
               img={tigerLilly}
               title={"Tiger Lilly"}
               description={"Yanir Green"}
-            />
+            />  */}
+
+            {restaurants.map((restaurant, index) => {
+              const {
+                image,
+                name,
+                chef: { name: chefName },
+              } = restaurant;
+              return (
+                <Card
+                  key={index}
+                  img={image}
+                  title={name}
+                  description={chefName}
+                ></Card>
+              );
+            })}
           </Slider>
 
           <div className="favorite-restaurant-button">
@@ -56,29 +83,7 @@ const Favorites = () => {
           className="favorite__dish-title"
         />
         <Slider {...dishSettings} className="favorite__dish-slider card_slider">
-          <Card
-            cardTitle={"Tiger Lilly"}
-            isDish={true}
-            img={padKi}
-            title={"Pad Ki Mao"}
-            description={
-              "Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut"
-            }
-            price={88}
-            icon={spicyIcon}
-          />
-          <Card
-            cardTitle={"Kab Kem"}
-            isDish={true}
-            img={garbanzo}
-            title={"Garbanzo Frito"}
-            description={
-              "Polenta fingers, veal cheek,magic chili cured lemon cream, yellow laksa"
-            }
-            price={98}
-          />
-
-          <Card
+          {/* <Card
             cardTitle={"Popina"}
             isDish={true}
             img={smokedPizza}
@@ -88,7 +93,33 @@ const Favorites = () => {
             }
             price={65}
             icon={veganIcon}
-          />
+          />  */}
+
+          {dishes.map((dish, index) => {
+            const {
+              name,
+              price,
+              image,
+              restaurant: { name: restaurantName },
+              tags,
+              ingredients,
+            }: dishInterface = dish;
+
+            // tags.map((tag) => console.log(tag));
+
+            return (
+              <Card
+                key={index}
+                isDish
+                img={image}
+                cardTitle={restaurantName}
+                title={name}
+                price={price}
+                ingredients={ingredients}
+                tags={tags}
+              />
+            );
+          })}
         </Slider>
       </div>
     </section>

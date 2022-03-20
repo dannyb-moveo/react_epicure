@@ -1,7 +1,11 @@
 import { Searchbar } from "../UI";
+import { chefsActions } from "../../store/chefs-slice";
+
 import "./hero.scss";
+import { useAppDispatch } from "../../store";
 
 const Hero = () => {
+  const dispatch = useAppDispatch();
   return (
     <>
       <section className="hero">
@@ -16,7 +20,11 @@ const Hero = () => {
 
       <section className="hero__nav">
         <div className="hero__nav-container">
-          <button type="button" className="btn btn-primary">
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={() => dispatch(chefsActions.toggle())}
+          >
             CHEFS
           </button>
           <button type="button" className="btn btn-primary">

@@ -1,8 +1,12 @@
-import React from "react";
 import "./restaurants.scss";
+import AnimatedPage from "../AnimatedPage";
 
 const Restaurants = () => {
-  return <main className="restaurants">Restaurants</main>;
+  return (
+    <AnimatedPage>
+      <div className="restaurants">Restaurants</div>
+    </AnimatedPage>
+  );
 };
 
 export default Restaurants;

@@ -7,17 +7,18 @@ import {
   Footer,
 } from "../../components";
 import "./home.scss";
+import AnimatedPage from "../AnimatedPage";
 
 const Home = () => {
   return (
-    <main>
+    <AnimatedPage>
       <Hero />
       <Favorites />
       <Service />
       <COTW />
       <About />
       <Footer />
-    </main>
+    </AnimatedPage>
   );
 };
 
