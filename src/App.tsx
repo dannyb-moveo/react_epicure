@@ -1,10 +1,15 @@
+import { BrowserRouter as Router } from "react-router-dom";
 import "./App.scss";
-import { Home } from "./pages";
+import AnimatedSwitch from "./pages/AnimatedSwitch";
+import { Navbar } from "./components";
 
 function App() {
   return (
     <>
-      <Home />
+      <Router>
+        <Navbar />
+        <AnimatedSwitch />
+      </Router>
     </>
   );
 }

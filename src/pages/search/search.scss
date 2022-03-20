@@ -1,0 +1,41 @@
+.search__container {
+  .card_slider .slick-track {
+    justify-content: start;
+  }
+
+  .search__dishes-title,
+  .search__chefs-title {
+    margin-top: 5rem;
+  }
+
+  .search__restaurants-slider {
+    .card {
+      .card_img {
+        height: 206px;
+      }
+      .card_content {
+        h3 {
+          font-size: clamp(25px, 2.5vw, 40px);
+        }
+        p {
+          font-size: clamp(20px, 2.5vw, 25px);
+        }
+      }
+    }
+  }
+
+  .search__dishes-slider {
+    .card {
+      .card_content {
+        p {
+          font-size: clamp(17.3px, 2.5vw, 24px);
+        }
+        h3 {
+          font-size: clamp(27.6px, 2.5vw, 38.4px);
+          max-width: 55%;
+          margin: 1rem auto;
+        }
+      }
+    }
+  }
+}

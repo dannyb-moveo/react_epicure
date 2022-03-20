@@ -1,21 +1,35 @@
 @import "../../variables";
 
 .service {
+  text-align: center;
+  background: $--color-gray;
+  padding-top: clamp(1rem, 10vw, 5rem);
+  padding-bottom: clamp(1rem, 10vw, 5rem);
+
+  .service_tags {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    background: $gray-color;
 
-    .service_tags {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(auto, 200px));
-        justify-content: center;
-        align-items: center;
+    & > div {
+      display: grid;
+      grid-template-rows: minmax(auto, clamp(50px, 5vw, 70px)) 1fr;
 
-        p {
-            margin-top: 1rem;
-
-            font-size: clamp(14px, 2.5vw, 25.2px);
-            font-weight: 100;
-            letter-spacing: 1.94px;
-        }
+      img {
+        display: inline-block;
+        object-fit: contain;
+        height: 100%;
+        justify-self: center;
+      }
     }
+    p {
+      margin-top: 1rem;
+      font-size: clamp(14px, 2.5vw, 25.2px);
+      font-weight: 100;
+      letter-spacing: 1.94px;
+      margin-bottom: unset;
+    }
+  }
 }

@@ -4,7 +4,7 @@
   font-weight: 100;
   line-height: 1;
   letter-spacing: clamp(0.93px, 0.2vw, 2px);
-  margin-bottom: 42px;
+  margin-bottom: 1rem;
 }
 
 .center {
@@ -12,11 +12,15 @@
 }
 
 .left {
-  text-align: left;
+  text-align: center;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 992px) {
+  .title {
+    margin-bottom: 42px;
+  }
+
   .left {
-    text-align: center;
+    text-align: left;
   }
 }

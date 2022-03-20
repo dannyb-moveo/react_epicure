@@ -1,3 +1,6 @@
-import Home from "./Home";
+import Home from "./home/Home";
+import Chefs from "./chefs/Chefs";
+import Restaurants from "./restaurants/Restaurants";
+import Search from "./search/Search";
 
-export { Home };
+export { Home, Restaurants, Chefs, Search };

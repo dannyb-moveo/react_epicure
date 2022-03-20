@@ -1,0 +1,68 @@
+.favorites {
+  overflow: hidden;
+
+  .favorite__restaurant-slider-wrapper {
+    max-width: 1146px;
+    margin: 0 auto;
+    .favorite-restaurant-button {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: end;
+
+      .btn {
+        margin-right: clamp(10px, 1.475vw, 25px);
+        font-size: clamp(14px, 2.5vw, 30px);
+        letter-spacing: 2px;
+        display: none;
+        img {
+          width: unset;
+        }
+      }
+    }
+  }
+
+  .favorite__restaurant-slider {
+    .card {
+      .card_img {
+        height: 206px;
+      }
+      .card_content {
+        h3 {
+          font-size: clamp(25px, 2.5vw, 40px);
+        }
+        p {
+          font-size: clamp(20px, 2.5vw, 25px);
+        }
+      }
+    }
+  }
+
+  .favorite__dish-slider {
+    .card {
+      .card_content {
+        p {
+          font-size: clamp(17.3px, 2.5vw, 24px);
+        }
+        h3 {
+          font-size: clamp(27.6px, 2.5vw, 38.4px);
+          max-width: 55%;
+          margin: 1rem auto;
+        }
+      }
+    }
+  }
+
+  .favorite__dish-title {
+    margin-top: 5rem;
+  }
+
+  @media screen and (min-width: 992px) {
+    .favorite__restaurant-slider-wrapper {
+      .favorite-restaurant-button {
+        .btn {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import { Title } from "..";
+import { Title } from "../UI";
 
 import "./about.scss";
 
